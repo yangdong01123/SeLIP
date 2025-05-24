@@ -1,0 +1,48 @@
+Model_Save_Dir: 'Models'
+model_name: 'SeLIP'
+epoch: 99
+ModelProject: 'inner'
+load_mode: 'model'
+
+TextVector_Dataset_Dir: 'Text_Data'
+dataset_version: 2
+json_version: 'information_NoModal'
+replace_norm: '头颅形态、大小未见异常。脑实质未见异常信号影，所见脑室形态及脑沟裂池未见异常扩张或变窄，中线结构未见移位。'
+image_from_dir: 'None'
+ParallelMode: False
+return_logit: False
+modal_include:
+  - ep2d_diff_3scan_trace_p2_TRACEW
+replace_info_semantic: True
+save_tag: "_replace_info"
+
+see_different_sample: False
+batch_size: 1
+topk: 10
+
+CLIP_frame: CLIP_Both_model
+bert_attention_mask: True
+specific_label: True
+
+
+image_encoder: 'ResNet'
+image_model_depth: 50
+image_encoder_params:
+  n_input_channels: 1
+  n_classes: 2048
+
+text_output_dim: 2048
+
+bert_weight_name: 'chinese-bert-wwm/ab0aa81da273504efc8540aa4d0bbaa3016a1bb5'
+# tokenizer
+truncation: True
+padding: 'max_length'
+max_length: 256
+return_tensors: 'pt'
+
+gpu: '0'
+wait_count: 0
+device_ids:
+  - 0
+
+norm_after_infer: False

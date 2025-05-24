@@ -1,0 +1,1 @@
+from .CLIP_Both import CLIP_Both_model
