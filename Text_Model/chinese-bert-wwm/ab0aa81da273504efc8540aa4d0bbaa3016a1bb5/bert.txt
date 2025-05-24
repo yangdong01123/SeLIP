@@ -1,0 +1,1 @@
+Files of the bert model which is used as text encoder.
